@@ -7,7 +7,7 @@ variable "APP" {
 }
 
 variable "RELEASE" {
-    default = "2.0.1"
+    default = "2.0.2"
 }
 
 variable "CU_VERSION" {
@@ -20,8 +20,8 @@ target "default" {
     args = {
         RELEASE = "${RELEASE}"
         INDEX_URL = "https://download.pytorch.org/whl/cu${CU_VERSION}"
-        TORCH_VERSION = "2.2.0+cu${CU_VERSION}"
-        XFORMERS_VERSION = "0.0.24+cu${CU_VERSION}"
+        TORCH_VERSION = "2.2.2+cu${CU_VERSION}"
+        XFORMERS_VERSION = "0.0.25.post1+cu${CU_VERSION}"
         SUPIR_COMMIT = "b6d497b31fc0eba3b0fa3d4759b9be0d5ea62ee4"
         LLAVA_MODEL = "liuhaotian/llava-v1.5-7b"
         RUNPODCTL_VERSION = "v1.14.2"

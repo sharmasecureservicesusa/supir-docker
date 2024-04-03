@@ -23,8 +23,8 @@
 * Python 3.10.12
 * [SUPIR](
   https://github.com/ashleykleynhans/SUPIR)
-* Torch 2.2.0
-* xformers 0.0.24
+* Torch 2.2.2
+* xformers 0.0.25.post1
 * Jupyter Lab
 * [runpodctl](https://github.com/runpod/runpodctl)
 * [OhMyRunPod](https://github.com/kodxana/OhMyRunPod)
