@@ -2,9 +2,9 @@
 
 echo "Starting SUPIR without GPU Optimization"
 
-VENV_PATH=$(cat /workspace/SUPIR/venv_path)
-source ${VENV_PATH}/bin/activate
+source /venv/bin/activate
 export HF_HOME="/workspace"
+export PYTHONUNBUFFERED=1
 cd /workspace/SUPIR
 
 nohup python3 gradio_demo.py \

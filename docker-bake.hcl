@@ -11,7 +11,7 @@ variable "APP" {
 }
 
 variable "RELEASE" {
-    default = "2.3.0"
+    default = "2.4.0"
 }
 
 variable "CU_VERSION" {
@@ -23,7 +23,7 @@ variable "BASE_IMAGE_REPOSITORY" {
 }
 
 variable "BASE_IMAGE_VERSION" {
-    default = "1.4.0"
+    default = "1.7.0"
 }
 
 variable "CUDA_VERSION" {
@@ -45,6 +45,5 @@ target "default" {
         XFORMERS_VERSION = "0.0.26.post1"
         SUPIR_COMMIT = "4f35aec759de3176fd4675db61ea986c846c1ddf"
         LLAVA_MODEL = "liuhaotian/llava-v1.5-7b"
-        VENV_PATH = "/workspace/venvs/SUPIR"
     }
 }
