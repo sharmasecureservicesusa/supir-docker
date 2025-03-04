@@ -3,7 +3,7 @@ variable "REGISTRY" {
 }
 
 variable "REGISTRY_USER" {
-    default = "sharmasecureusa"
+    default = "sharmasecureservicesusa"
 }
 
 variable "APP" {
