@@ -19,15 +19,15 @@ variable "CU_VERSION" {
 }
 
 variable "BASE_IMAGE_REPOSITORY" {
-    default = "ashleykza/runpod-base"
+    default = "runpod/base"
 }
 
 variable "BASE_IMAGE_VERSION" {
-    default = "1.8.0"
+    default = "0.6.3"
 }
 
 variable "CUDA_VERSION" {
-    default = "12.1.1"
+    default = "11.8.0"
 }
 
 variable "TORCH_VERSION" {
