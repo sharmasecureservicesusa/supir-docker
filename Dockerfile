@@ -1,5 +1,4 @@
-ARG BASE_IMAGE
-FROM ${BASE_IMAGE}
+FROM 'runpod/pytorch' AS base
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -20,13 +19,9 @@ ARG INDEX_URL
 ARG TORCH_VERSION
 ARG XFORMERS_VERSION
 WORKDIR /SUPIR
-ENV TORCH_INDEX_URL=${INDEX_URL}
-ENV TORCH_COMMAND="pip install torch==${TORCH_VERSION} torchvision --index-url ${TORCH_INDEX_URL}"
-ENV XFORMERS_PACKAGE="xformers==${XFORMERS_VERSION} --index-url ${TORCH_INDEX_URL}"
 RUN source /venv/bin/activate && \
-    ${TORCH_COMMAND} && \
     pip3 install -r requirements.txt && \
-    pip3 install ${XFORMERS_PACKAGE} &&  \
+    pip install xformers &&  \
     deactivate
 
 # Create model directory
@@ -46,7 +41,7 @@ ADD https://huggingface.co/ashleykleynhans/SUPIR/resolve/main/SUPIR-v0Q.ckpt /SU
 
 # Download additional models
 ARG LLAVA_MODEL
-ENV LLAVA_MODEL=${LLAVA_MODEL}
+ENV LLAVA_MODEL="liuhaotian/llava-v1.5-7b"
 ENV HF_HOME="/"
 COPY --chmod=755 scripts/download_models.py /download_models.py
 RUN source /venv/bin/activate && \
